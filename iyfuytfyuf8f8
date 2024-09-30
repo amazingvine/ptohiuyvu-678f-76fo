@@ -1,0 +1,16 @@
+# Parent class: Image
+class Image:
+    def __init__(self, res: str, size: int):  # Initialize resolution and size
+        self.res, self.size = res, size
+
+# Child class: VectorImage, inherits from Image
+class VectorImage(Image):
+    def __init__(self, res: str, size: int, layers: int):  # Add numLayers attribute
+        super().__init__(res, size)
+        self.layers = layers
+
+# Create an object of VectorImage
+vimg = VectorImage("4K", 450, 8)
+
+# Print the parent and child class attributes
+print(vimg.res, vimg.size, vimg.layers)
